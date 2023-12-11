@@ -6,6 +6,7 @@ import { Form } from "react-bootstrap";
 import { InputGroup } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../constants/backendUrl";
 const Login = (props) => {
   const { handleChange } = props;
   const [userName, setUserName] = React.useState("");
@@ -13,7 +14,7 @@ const Login = (props) => {
   const navigate = useNavigate();
   const onSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:4000/login/user", {
+      const response = await fetch(`${BASE_URL}/login/user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

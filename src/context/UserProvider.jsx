@@ -34,7 +34,7 @@ class UserProvider extends React.Component {
   }
   getData = async () => {
     //console.log("value ", document.cookie);
-    const data = await fetch(`http://localhost:4000/users/${this.props}`, {
+    const data = await fetch(`/users/${this.props}`, {
       headers: {
         authorization: document.cookie.split("=")[1],
       },

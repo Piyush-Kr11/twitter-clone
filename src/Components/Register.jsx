@@ -4,6 +4,7 @@ import "../styles/styles.css";
 import { Button, CardBody } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { InputGroup } from "react-bootstrap";
+import { BASE_URL } from "../constants/backendUrl";
 
 // import bcrypt from "bcrypt";
 const Register = (props) => {
@@ -16,7 +17,7 @@ const Register = (props) => {
     
     try {
       const response = await fetch(
-        "http://localhost:4000/signup/user",
+        `${BASE_URL}/signup/user`,
         {
             method: "POST",
             headers: {

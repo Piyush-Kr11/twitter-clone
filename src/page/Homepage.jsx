@@ -3,7 +3,7 @@ import Login from "../Components/Login";
 import Register from "../Components/Register";
 import { useNavigate } from "react-router";
 // import { Step } from "../constants/appConstants";
-
+import { BASE_URL } from "../constants/backendUrl";
 const Homepage = () => {
   const [step, setStep] = React.useState("LOGIN");
   const [res, setRes] = React.useState(undefined);
@@ -14,7 +14,7 @@ const Homepage = () => {
         const cookie = document.cookie.split("=");
         if(cookie.length>1){
         console.log(cookie);
-        const data = await fetch("http://localhost:4000/user/auth/check", {
+        const data = await fetch(`${BASE_URL}/user/auth/check`, {
           headers: {
             authorization: cookie[1],
           },
